@@ -32,8 +32,7 @@
           <ion-avatar item-start>
             <img src="{{pelicula.Poster}}">
           </ion-avatar>
-          <h2>{{pelicula.Title}}</h2>
-          <p>{{pelicula.Year}}</p>
+          <h3>{{pelicula.Title}} </h3>
         </ion-item>
       
         <img src="{{pelicula.Poster}}">
@@ -43,12 +42,12 @@
         </ion-card-content> -->
       
         <ion-row>
-          <ion-col>
+          <!-- <ion-col>
             <button ion-button icon-start clear small>
               <ion-icon name="thumbs-up"></ion-icon>
               <div>Calificar</div>
             </button>
-          </ion-col>
+          </ion-col> -->
           <ion-col>
             <button ion-button icon-start clear small (click)="addfavotiros(pelicula)">
               <ion-icon name="text"></ion-icon>
@@ -57,7 +56,7 @@
           </ion-col>
           <ion-col align-self-center text-center>
             <ion-note>
-              11h ago
+              Año: {{pelicula.Year}}
             </ion-note>
           </ion-col>
         </ion-row>
