@@ -10,12 +10,14 @@ import { MoviesService } from '../service/movies.service';
 export class Tab2Page implements OnInit{
 
   MoviesFavoritas:ListaFavoritos[]=[]
+  calificacion:Array<string>=["Excelente", "Regular", "Mala", "Muy mala"]
   constructor(public S_movie:MoviesService) {
+    this.loadingStorage();
+   console.log("gola");
    
   }
 
 ngOnInit(){
-  this.loadingStorage();
 }
 
 

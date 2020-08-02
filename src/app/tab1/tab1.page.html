@@ -17,52 +17,24 @@
         <ion-item color="dark">
             <ion-label position="floating">Buscar Pelicula</ion-label>
             <!-- [(ngModel)]="todo.title" [ngModelOptions]="{standalone: true} -->
-            <ion-input type="text" [(ngModel)]='nombrePelicula' (keyup)='agregarItem()'></ion-input>
+            <ion-input type="text" [(ngModel)]='nombrePelicula' (keyup)='ListarPeliculas()'></ion-input>
         </ion-item>
     </ion-list>
 
     <ion-list>
-      <ion-label>
-          Listado Peliculas
-      </ion-label>
-      <ion-item color="dark" *ngFor='let pelicula of Peliculas'>
-      <ion-card>
+   
+        <ion-item color="dark" *ngFor='let pelicula of Peliculas'>
 
-        <ion-item>
-          <ion-avatar item-start>
+          <ion-thumbnail item-start>
             <img src="{{pelicula.Poster}}">
-          </ion-avatar>
-          <h3>{{pelicula.Title}} </h3>
+          </ion-thumbnail>
+          <h2>{{pelicula.Title}}</h2>
+          <p>{{pelicula.Year}}</p>
+          <button ion-button clear item-end (click)="addfavotiros(pelicula)">Agregar Favoritos</button>
+
+      
         </ion-item>
-      
-        <img src="{{pelicula.Poster}}">
-      
-        <!-- <ion-card-content>
-          <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-        </ion-card-content> -->
-      
-        <ion-row>
-          <!-- <ion-col>
-            <button ion-button icon-start clear small>
-              <ion-icon name="thumbs-up"></ion-icon>
-              <div>Calificar</div>
-            </button>
-          </ion-col> -->
-          <ion-col>
-            <button ion-button icon-start clear small (click)="addfavotiros(pelicula)">
-              <ion-icon name="text"></ion-icon>
-              <div>Añadir Favoritos</div>
-            </button>
-          </ion-col>
-          <ion-col align-self-center text-center>
-            <ion-note>
-              Año: {{pelicula.Year}}
-            </ion-note>
-          </ion-col>
-        </ion-row>
-      
-      </ion-card>
-      </ion-item>
+
   </ion-list>
 
  

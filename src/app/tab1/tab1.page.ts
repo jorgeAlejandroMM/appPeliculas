@@ -12,14 +12,12 @@ export class Tab1Page {
   Peliculas:Array<Movie>[];
   constructor(private S_movie:MoviesService) {
 
-    this.nombrePelicula="avenger";
-   
   }
 
 
 
   
-agregarItem(){
+ListarPeliculas(){
   if(this.nombrePelicula.length==0)
   {
     return;
